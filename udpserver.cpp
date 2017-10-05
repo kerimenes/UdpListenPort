@@ -20,9 +20,9 @@ void UdpServer::readPendingDatagrams()
 
 		udpsocket->readDatagram(datagram.data(), datagram.size(),
 								&sender, &senderPort);
-
 		QByteArray data;
 		data.append(datagram);
+		data.append("\n");
 		data.append(sender.toString());
 		emit newDatagram(data);
 	}

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>495</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,17 +16,66 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QTableWidget" name="tableWidget">
-      <column>
-       <property name="text">
-        <string>IP Adresi</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Durumu</string>
-       </property>
-      </column>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="page">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QTableWidget" name="tableWidget">
+          <column>
+           <property name="text">
+            <string>IP Adresi</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Durumu</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Yüzde</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Ilerleme</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_2">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_2">
+          <column>
+           <property name="text">
+            <string>Aygıt</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Kard Türü</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Mac Adress Sayisi</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>IP Adresi</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>

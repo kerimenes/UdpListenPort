@@ -15,10 +15,16 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     udpserver.cpp \
-    tcpserver.cpp
+    tcpserver.cpp \
+    memorycardhelper.cpp \
+    other/qdevicewatcher_linux.cpp
 
 HEADERS  += mainwindow.h \
     udpserver.h \
-    tcpserver.h
+    tcpserver.h \
+    memorycardhelper.h \
+    other/qdevicewatcher.h \
+    other/qdevicewatcher_p.h
 
 FORMS    += mainwindow.ui
+LIBS += -lQDeviceWatcher
