@@ -3,7 +3,7 @@
 
 #include <QUdpSocket>
 
-class UdpServer : public QUdpSocket
+class UdpServer: public QObject
 {
 	Q_OBJECT
 public:
@@ -14,6 +14,7 @@ signals:
 
 public slots:
 protected slots:
+	void connected();
 	void readPendingDatagrams();
 private:
 	QUdpSocket *udpsocket;

@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "memorycardhelper.h"
+//#include "memorycardhelper.h"
 
 #include <QLabel>
 #include <QTimer>
@@ -20,9 +20,9 @@ MainWindow::MainWindow(QWidget *parent) :
 	QMainWindow(parent),
 	ui(new Ui::MainWindow)
 {
-	deviceName = "";
-	sudoPassword = getPassword();
-	mountPath = createMountPath();
+//	deviceName = "";
+//	sudoPassword = getPassword();
+//	mountPath = createMountPath();
 	ui->setupUi(this);
 	udp = new UdpServer();
 	connect(udp, SIGNAL(newDatagram(QByteArray)), SLOT(gettingData(QByteArray)));
@@ -32,17 +32,17 @@ MainWindow::MainWindow(QWidget *parent) :
 	ui->tableWidget_2->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 	ui->tableWidget_2->setColumnCount(4);
 
-	mcHelper = new MemoryCardHelper(this);
-	connect(mcHelper, SIGNAL(deviceAdded(QString)), this, SLOT(deviceAdded(QString)));
-	connect(mcHelper, SIGNAL(deviceRemoved(QString)), SLOT(deviceRemoved(QString)));
-	connect(mcHelper, SIGNAL(atachedDevice(QHash<QString, QString>)), SLOT(atachedDevice(QHash<QString, QString>)));
+//	mcHelper = new MemoryCardHelper(this);
+//	connect(mcHelper, SIGNAL(deviceAdded(QString)), this, SLOT(deviceAdded(QString)));
+//	connect(mcHelper, SIGNAL(deviceRemoved(QString)), SLOT(deviceRemoved(QString)));
+//	connect(mcHelper, SIGNAL(atachedDevice(QHash<QString, QString>)), SLOT(atachedDevice(QHash<QString, QString>)));
 
 	this->setContextMenuPolicy(Qt::CustomContextMenu);
 	connect(this, SIGNAL(customContextMenuRequested(QPoint)), SLOT(showRightClickMenu(QPoint)));
-
-	timer = new QTimer();
-	timer->start(1000);
-	connect(timer, SIGNAL(timeout()), SLOT(timeout()));
+	ui->stackedWidget->setCurrentIndex(0);
+//	timer = new QTimer();
+//	timer->start(1000);
+//	connect(timer, SIGNAL(timeout()), SLOT(timeout()));
 
 }
 
@@ -121,15 +121,15 @@ void MainWindow::showRightClickMenu(QPoint p)
 void MainWindow::loadMac(bool triggered)
 {
 	if(!triggered) {
-		mcHelper->loadMac(mountPath, 100);
+//		mcHelper->loadMac(mountPath, 100);
 	}
 }
 
 void MainWindow::eject(bool triggered)
 {
 	if(!triggered) {
-		if(!deviceName.isEmpty())
-			mcHelper->unmountDevice(deviceName);
+		if(!deviceName.isEmpty());
+//			mcHelper->unmountDevice(deviceName);
 	}
 }
 
@@ -137,8 +137,8 @@ void MainWindow::mount(bool triggered)
 {
 	qDebug() << "asdadsadsa";
 	if(!triggered) {
-		if(!deviceName.isEmpty())
-			mcHelper->mountDevice(deviceName);
+		if(!deviceName.isEmpty());
+//			mcHelper->mountDevice(deviceName);
 	}
 }
 

@@ -8,7 +8,7 @@
 #include <QString>
 
 #include "udpserver.h"
-#include "memorycardhelper.h"
+//#include "memorycardhelper.h"
 
 struct Deneme {
 
@@ -56,7 +56,7 @@ private slots:
 
 private:
 	Ui::MainWindow *ui;
-	MemoryCardHelper *mcHelper;
+//	MemoryCardHelper *mcHelper;
 	UdpServer *udp;
 	int cntDevice = 0;
 	QString sudoPassword;
